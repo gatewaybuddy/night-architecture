@@ -23,10 +23,9 @@ tiers:
     type: "ollama"
     host: "localhost"
     port: 11434
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     fallback_models:
-      - "deepseek-coder-v2"
-      - "codellama:34b"
+      - "deepseek-coder-v2:16b"
     description: "Free local inference on 5090 GPU"
     cost: "Free (electricity only)"
     use_for:
@@ -60,7 +59,7 @@ agents:
   explorer_conservative:
     name: "Conservative Explorer"
     role: "exploration"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.3
     system_prompt: |
       You are a conservative software architect. Your role is to propose 
@@ -92,7 +91,7 @@ agents:
   explorer_aggressive:
     name: "Aggressive Explorer"
     role: "exploration"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.7
     system_prompt: |
       You are an aggressive, innovation-focused software architect. Your role 
@@ -124,7 +123,7 @@ agents:
   explorer_alternative:
     name: "Alternative Explorer"
     role: "exploration"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.8
     system_prompt: |
       You are a lateral-thinking software architect. Your role is to propose
@@ -160,7 +159,7 @@ agents:
   devils_advocate:
     name: "Devil's Advocate"
     role: "challenge"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.5
     system_prompt: |
       You are a Devil's Advocate. Your ONLY job is to find problems, risks, 
@@ -222,7 +221,7 @@ agents:
   reviewer_security:
     name: "Security Reviewer"
     role: "review"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.2
     system_prompt: |
       You are a security-focused code reviewer. Examine code for:
@@ -248,7 +247,7 @@ agents:
   reviewer_performance:
     name: "Performance Reviewer"
     role: "review"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.2
     system_prompt: |
       You are a performance-focused code reviewer. Examine code for:
@@ -274,7 +273,7 @@ agents:
   reviewer_maintainability:
     name: "Maintainability Reviewer"
     role: "review"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.3
     system_prompt: |
       You are a maintainability-focused code reviewer. You think about the
@@ -306,7 +305,7 @@ agents:
   manager_quality:
     name: "Quality Manager"
     role: "management"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.3
     system_prompt: |
       You are a Quality Manager overseeing the development process. You:
@@ -337,7 +336,7 @@ agents:
   manager_evolution:
     name: "Evolution Manager"
     role: "management"
-    model: "qwen3-coder"
+    model: "qwen2.5-coder:7b"
     temperature: 0.4
     system_prompt: |
       You are an Evolution Manager focused on continuous improvement. You:
@@ -461,8 +460,8 @@ ollama:
   
   # Model pull on setup
   models_to_pull:
-    - "qwen3-coder"
-    - "deepseek-coder-v2"  # Fallback
+    - "qwen2.5-coder:7b"
+    - "deepseek-coder-v2:16b"  # Fallback
 
 # =============================================================================
 # PATTERN STORAGE

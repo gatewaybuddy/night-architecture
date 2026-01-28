@@ -15,7 +15,7 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 # Configuration
 OLLAMA_HOST="${OLLAMA_HOST:-localhost}"
 OLLAMA_PORT="${OLLAMA_PORT:-11434}"
-OLLAMA_MODEL="${OLLAMA_MODEL:-qwen3-coder}"
+OLLAMA_MODEL="${OLLAMA_MODEL:-qwen2.5-coder:7b}"
 
 STATE_FILE="$PROJECT_DIR/state/session.json"
 LOG_FILE="$PROJECT_DIR/logs/tier-router.log"
@@ -28,6 +28,26 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m'
+
+# JSON parsing helper (use Python instead of jq if jq is not available)
+json_parse() {
+    if command -v jq &> /dev/null; then
+        jq "$@"
+    else
+        # Use Python as fallback
+        local filter="$1"
+        shift
+        python3 -c "import sys, json; data=json.load(sys.stdin); print(json.dumps($filter) if isinstance($filter, (dict, list)) else $filter)" "$@" 2>/dev/null || echo ""
+    fi
+}
+
+json_value() {
+    python3 -c "import sys, json; print(json.load(sys.stdin).get('$1', ''))"
+}
+
+json_array() {
+    python3 -c "import sys, json; data=json.load(sys.stdin); [print(item.get('$1', '')) for item in data.get('$2', [])]"
+}
 
 # =============================================================================
 # LOGGING
@@ -61,36 +81,27 @@ call_ollama() {
     local prompt=$1
     local system_prompt="${2:-}"
     local temperature="${3:-0.5}"
-    
+
     local payload
     if [ -n "$system_prompt" ]; then
-        payload=$(jq -n \
-            --arg model "$OLLAMA_MODEL" \
-            --arg prompt "$prompt" \
-            --arg system "$system_prompt" \
-            --argjson temp "$temperature" \
-            '{model: $model, prompt: $prompt, system: $system, temperature: $temp, stream: false}')
+        payload=$(python3 -c "import json; print(json.dumps({'model': '$OLLAMA_MODEL', 'prompt': '''$prompt''', 'system': '''$system_prompt''', 'temperature': $temperature, 'stream': False}))")
     else
-        payload=$(jq -n \
-            --arg model "$OLLAMA_MODEL" \
-            --arg prompt "$prompt" \
-            --argjson temp "$temperature" \
-            '{model: $model, prompt: $prompt, temperature: $temp, stream: false}')
+        payload=$(python3 -c "import json; print(json.dumps({'model': '$OLLAMA_MODEL', 'prompt': '''$prompt''', 'temperature': $temperature, 'stream': False}))")
     fi
-    
+
     local response
     response=$(curl -s "http://$OLLAMA_HOST:$OLLAMA_PORT/api/generate" \
         -d "$payload" \
         --max-time 300)
-    
+
     if [ $? -eq 0 ] && [ -n "$response" ]; then
-        echo "$response" | jq -r '.response // empty'
-        
+        echo "$response" | python3 -c "import sys, json; data=json.load(sys.stdin); print(data.get('response', ''))"
+
         # Update stats
         if [ -f "$STATE_FILE" ]; then
-            jq '.total_ollama_calls += 1' "$STATE_FILE" > "$STATE_FILE.tmp" && mv "$STATE_FILE.tmp" "$STATE_FILE"
+            python3 -c "import json; data=json.load(open('$STATE_FILE')); data['total_ollama_calls'] = data.get('total_ollama_calls', 0) + 1; json.dump(data, open('$STATE_FILE.tmp', 'w'))" && mv "$STATE_FILE.tmp" "$STATE_FILE"
         fi
-        
+
         return 0
     else
         return 1
@@ -321,18 +332,10 @@ capture_pattern() {
     
     case $pattern_type in
         success)
-            jq -n \
-                --arg task "$task_desc" \
-                --arg approach "$details" \
-                --arg ts "$timestamp" \
-                '{task: $task, approach: $approach, timestamp: $ts}' > "$pattern_file"
+            python3 -c "import json; print(json.dumps({'task': '$task_desc', 'approach': '$details', 'timestamp': '$timestamp'}))" > "$pattern_file"
             ;;
         failure)
-            jq -n \
-                --arg task "$task_desc" \
-                --arg issue "$details" \
-                --arg ts "$timestamp" \
-                '{task: $task, issue: $issue, timestamp: $ts}' > "$pattern_file"
+            python3 -c "import json; print(json.dumps({'task': '$task_desc', 'issue': '$details', 'timestamp': '$timestamp'}))" > "$pattern_file"
             ;;
     esac
     
@@ -340,7 +343,7 @@ capture_pattern() {
     
     # Update stats
     if [ -f "$STATE_FILE" ]; then
-        jq '.patterns_captured += 1' "$STATE_FILE" > "$STATE_FILE.tmp" && mv "$STATE_FILE.tmp" "$STATE_FILE"
+        python3 -c "import json; data=json.load(open('$STATE_FILE')); data['patterns_captured'] = data.get('patterns_captured', 0) + 1; json.dump(data, open('$STATE_FILE.tmp', 'w'))" && mv "$STATE_FILE.tmp" "$STATE_FILE"
     fi
 }
 
@@ -357,13 +360,13 @@ search_patterns() {
     echo ""
     echo -e "${GREEN}=== SUCCESSES ===${NC}"
     grep -l -i "$query" "$PROJECT_DIR/patterns/successes/"*.json 2>/dev/null | while read -r file; do
-        cat "$file" | jq -r '"• \(.task): \(.approach)"'
+        python3 -c "import json; data=json.load(open('$file')); print('• ' + data['task'] + ': ' + data['approach'])"
     done || echo "No matching success patterns"
-    
+
     echo ""
     echo -e "${RED}=== FAILURES (Learn from these!) ===${NC}"
     grep -l -i "$query" "$PROJECT_DIR/patterns/failures/"*.json 2>/dev/null | while read -r file; do
-        cat "$file" | jq -r '"• \(.task): \(.issue)"'
+        python3 -c "import json; data=json.load(open('$file')); print('• ' + data['task'] + ': ' + data['issue'])"
     done || echo "No matching failure patterns"
     
     echo ""
@@ -390,9 +393,7 @@ show_status() {
         
         # Show available models
         echo "  Available models:"
-        curl -s "http://$OLLAMA_HOST:$OLLAMA_PORT/api/tags" | jq -r '.models[].name' | while read -r model; do
-            echo "    - $model"
-        done
+        curl -s "http://$OLLAMA_HOST:$OLLAMA_PORT/api/tags" | python3 -c "import sys, json; data=json.load(sys.stdin); [print('    - ' + m['name']) for m in data.get('models', [])]" 2>/dev/null
     else
         echo -e "  Status: ${RED}Offline${NC}"
         echo "  Run: ./scripts/ollama-setup.sh"
@@ -402,10 +403,10 @@ show_status() {
     # Session Stats
     if [ -f "$STATE_FILE" ]; then
         echo -e "${CYAN}Session Statistics${NC}"
-        echo "  Tasks completed: $(jq -r '.total_tasks_completed' "$STATE_FILE")"
-        echo "  Ollama calls: $(jq -r '.total_ollama_calls' "$STATE_FILE")"
-        echo "  API calls: $(jq -r '.total_api_calls' "$STATE_FILE")"
-        echo "  Patterns captured: $(jq -r '.patterns_captured' "$STATE_FILE")"
+        echo "  Tasks completed: $(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('total_tasks_completed', 0))")"
+        echo "  Ollama calls: $(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('total_ollama_calls', 0))")"
+        echo "  API calls: $(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('total_api_calls', 0))")"
+        echo "  Patterns captured: $(python3 -c "import json; print(json.load(open('$STATE_FILE')).get('patterns_captured', 0))")"
         echo ""
     fi
     
