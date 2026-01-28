@@ -1,0 +1,448 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Claude Code//Project Organizer//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Rado's Claude Projects
+X-WR-TIMEZONE:UTC
+X-WR-CALDESC:Strategic project management for all active development projects
+
+BEGIN:VEVENT
+UID:week1-mon-autospot-1@claude-organizer
+DTSTART:20260127T140000Z
+DTEND:20260127T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Review codebase for bugs
+DESCRIPTION:Review AUTOSPOT codebase thoroughly and create bug report. Focus on video generation pipeline\, API integrations\, and error handling.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+LOCATION:AUTOSPOT project directory
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-mon-autospot-rado-1@claude-organizer
+DTSTART:20260127T180000Z
+DTEND:20260127T200000Z
+SUMMARY:[RADO] AUTOSPOT - Final design review and UI polish
+DESCRIPTION:Conduct final design review of AUTOSPOT UI. Check all user flows\, button states\, error messages\, and visual consistency.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:BUSINESS,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-mon-radorealtalk-1@claude-organizer
+DTSTART:20260127T190000Z
+DTEND:20260127T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Build automated conversation extraction
+DESCRIPTION:Create automated script to extract conversations from radochats archive. Process 399 conversations systematically.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-mon-radorealtalk-rado-1@claude-organizer
+DTSTART:20260127T200000Z
+DTEND:20260127T220000Z
+SUMMARY:[RADO] RadoRealTalk - Review next 5 articles
+DESCRIPTION:Review and approve the next 5 articles for publication. Check tone\, accuracy\, and content quality.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Rado
+CATEGORIES:CONTENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-tue-autospot-1@claude-organizer
+DTSTART:20260128T140000Z
+DTEND:20260128T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Add comprehensive error handling
+DESCRIPTION:Add comprehensive error handling to video generation pipeline. Include retry logic\, graceful degradation\, and user notifications.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-tue-autospot-rado-1@claude-organizer
+DTSTART:20260128T180000Z
+DTEND:20260128T200000Z
+SUMMARY:[RADO] AUTOSPOT - Create product demo video outline
+DESCRIPTION:Create outline and script for AUTOSPOT product demo video. Highlight key features and value proposition.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:MARKETING,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-tue-radorealtalk-1@claude-organizer
+DTSTART:20260128T190000Z
+DTEND:20260128T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Create batch tone review processing
+DESCRIPTION:Build batch processing system for tone review of multiple articles. Automate quality checks.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-tue-strategic-rado-1@claude-organizer
+DTSTART:20260128T200000Z
+DTEND:20260128T220000Z
+SUMMARY:[RADO] Strategic - Review Claude's project analysis
+DESCRIPTION:Review comprehensive project analysis prepared by Claude. Validate priorities and strategic direction.\n\nProject: Strategic Planning\nPriority: MEDIUM\nOwner: Rado
+CATEGORIES:STRATEGIC,MEDIUM-PRIORITY
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-wed-autospot-1@claude-organizer
+DTSTART:20260129T140000Z
+DTEND:20260129T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Optimize video generation performance
+DESCRIPTION:Optimize video generation pipeline for speed and efficiency. Add comprehensive logging.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-wed-autospot-rado-1@claude-organizer
+DTSTART:20260129T180000Z
+DTEND:20260129T210000Z
+SUMMARY:[RADO] AUTOSPOT - Set up production infrastructure
+DESCRIPTION:Set up production hosting\, configure domains\, SSL certificates\, and deployment pipeline.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:DEVOPS,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-wed-radorealtalk-1@claude-organizer
+DTSTART:20260129T190000Z
+DTEND:20260129T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Build content categorization system
+DESCRIPTION:Create automated content categorization system. Tag articles by theme\, topic\, and content type.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-wed-radorealtalk-rado-1@claude-organizer
+DTSTART:20260129T200000Z
+DTEND:20260129T220000Z
+SUMMARY:[RADO] RadoRealTalk - Define content themes
+DESCRIPTION:Define content themes and categories for RadoRealTalk. Create content strategy.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Rado
+CATEGORIES:CONTENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-wed-personal-1@claude-organizer
+DTSTART:20260129T160000Z
+DTEND:20260129T180000Z
+SUMMARY:[CLAUDE] personal_site - Design blog integration
+DESCRIPTION:Design architecture for blog integration with personal_site. Plan component structure.\n\nProject: personal_site\nPriority: MEDIUM\nOwner: Claude
+CATEGORIES:DEVELOPMENT,MEDIUM-PRIORITY,PERSONAL-SITE
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-thu-autospot-1@claude-organizer
+DTSTART:20260130T140000Z
+DTEND:20260130T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Create automated testing suite
+DESCRIPTION:Build comprehensive automated testing suite for core AUTOSPOT features. Include unit and integration tests.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-thu-autospot-rado-1@claude-organizer
+DTSTART:20260130T180000Z
+DTEND:20260130T210000Z
+SUMMARY:[RADO] AUTOSPOT - Configure production environment
+DESCRIPTION:Configure production environment variables\, API keys\, and secrets management.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:DEVOPS,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-thu-radorealtalk-1@claude-organizer
+DTSTART:20260130T190000Z
+DTEND:20260130T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Generate SEO metadata
+DESCRIPTION:Generate SEO metadata for all existing articles. Create title tags\, descriptions\, and keywords.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-thu-personal-1@claude-organizer
+DTSTART:20260130T160000Z
+DTEND:20260130T180000Z
+SUMMARY:[CLAUDE] personal_site - Create blog components
+DESCRIPTION:Build blog component structure for personal_site integration.\n\nProject: personal_site\nPriority: MEDIUM\nOwner: Claude
+CATEGORIES:DEVELOPMENT,MEDIUM-PRIORITY,PERSONAL-SITE
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-thu-strategic-rado-1@claude-organizer
+DTSTART:20260130T200000Z
+DTEND:20260130T220000Z
+SUMMARY:[RADO] Strategic - Approve strategic plan
+DESCRIPTION:Review and approve strategic plan priorities. Make any necessary adjustments.\n\nProject: Strategic Planning\nPriority: MEDIUM\nOwner: Rado
+CATEGORIES:STRATEGIC,MEDIUM-PRIORITY
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-fri-autospot-1@claude-organizer
+DTSTART:20260131T140000Z
+DTEND:20260131T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Set up monitoring and alerting
+DESCRIPTION:Set up Sentry integration for error monitoring and alerting. Configure notifications.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-fri-autospot-rado-1@claude-organizer
+DTSTART:20260131T180000Z
+DTEND:20260131T210000Z
+SUMMARY:[RADO] AUTOSPOT - Test Sora API quota and pricing
+DESCRIPTION:Test Sora API quota limits and pricing. Understand cost structure for customer pricing.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:BUSINESS,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-fri-radorealtalk-1@claude-organizer
+DTSTART:20260131T190000Z
+DTEND:20260131T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Create automated publishing workflow
+DESCRIPTION:Build automated publishing workflow for articles. Include scheduling and distribution.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-fri-radorealtalk-rado-1@claude-organizer
+DTSTART:20260131T200000Z
+DTEND:20260131T220000Z
+SUMMARY:[RADO] RadoRealTalk - Set publishing schedule
+DESCRIPTION:Set publishing schedule for RadoRealTalk (2-3x per week). Plan content calendar.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Rado
+CATEGORIES:CONTENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week1-fri-cleanup-1@claude-organizer
+DTSTART:20260131T160000Z
+DTEND:20260131T200000Z
+SUMMARY:[CLAUDE] Legacy Cleanup - Create archive structure
+DESCRIPTION:Create Archive/2020-2021 directory structure and document each legacy project.\n\nProject: Legacy Cleanup\nPriority: MEDIUM\nOwner: Claude
+CATEGORIES:MAINTENANCE,MEDIUM-PRIORITY
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:milestone-week1@claude-organizer
+DTSTART:20260131T230000Z
+DTEND:20260131T233000Z
+SUMMARY:🎯 MILESTONE: Week 1 Complete
+DESCRIPTION:Week 1 Checklist:\n✓ AUTOSPOT: Pre-launch preparation complete\n✓ RadoRealTalk: Automation pipeline built\n✓ personal_site: Blog integration designed\n✓ Legacy: Archive structure ready\n\nNext: Week 2 - Beta launch and content production
+CATEGORIES:MILESTONE
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-mon-autospot-1@claude-organizer
+DTSTART:20260203T140000Z
+DTEND:20260203T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Write API documentation
+DESCRIPTION:Create comprehensive API documentation for AUTOSPOT integrations. Include examples and use cases.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-mon-autospot-rado-1@claude-organizer
+DTSTART:20260203T180000Z
+DTEND:20260203T210000Z
+SUMMARY:[RADO] AUTOSPOT - Recruit first beta customer
+DESCRIPTION:Recruit and onboard first beta customer for AUTOSPOT. Provide full support.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:SALES,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-mon-radorealtalk-1@claude-organizer
+DTSTART:20260203T190000Z
+DTEND:20260203T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Create content calendar generator
+DESCRIPTION:Build automated content calendar generator. Schedule articles across weeks.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-mon-radorealtalk-rado-1@claude-organizer
+DTSTART:20260203T200000Z
+DTEND:20260203T220000Z
+SUMMARY:[RADO] RadoRealTalk - Review and approve next 5 articles
+DESCRIPTION:Review and approve articles 17-21 for publication. Ensure quality standards.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Rado
+CATEGORIES:CONTENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-mon-cleanup-1@claude-organizer
+DTSTART:20260203T160000Z
+DTEND:20260203T200000Z
+SUMMARY:[CLAUDE] Legacy Cleanup - Execute archive migration
+DESCRIPTION:Move 15 legacy projects to Archive/2020-2021 directory. Clean up root directory.\n\nProject: Legacy Cleanup\nPriority: LOW\nOwner: Claude
+CATEGORIES:MAINTENANCE,LOW-PRIORITY
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-tue-autospot-1@claude-organizer
+DTSTART:20260204T140000Z
+DTEND:20260204T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Create admin dashboard
+DESCRIPTION:Build admin dashboard for campaign monitoring. Include analytics and user management.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-tue-autospot-rado-1@claude-organizer
+DTSTART:20260204T180000Z
+DTEND:20260204T210000Z
+SUMMARY:[RADO] AUTOSPOT - Recruit second beta customer
+DESCRIPTION:Recruit and onboard second beta customer. Gather initial feedback.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:SALES,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-tue-radorealtalk-1@claude-organizer
+DTSTART:20260204T190000Z
+DTEND:20260204T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Build podcast script formatter
+DESCRIPTION:Create podcast script formatter to convert articles into podcast-ready scripts.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-tue-minecraft-1@claude-organizer
+DTSTART:20260204T160000Z
+DTEND:20260204T200000Z
+SUMMARY:[CLAUDE] AI_Minecraft_Players - Review Phase 8 requirements
+DESCRIPTION:Review Phase 8 (Learning & Adaptation) requirements. Plan implementation approach.\n\nProject: AI_Minecraft_Players\nPriority: MEDIUM\nOwner: Claude
+CATEGORIES:DEVELOPMENT,MEDIUM-PRIORITY,MINECRAFT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-wed-autospot-1@claude-organizer
+DTSTART:20260205T140000Z
+DTEND:20260205T180000Z
+SUMMARY:[CLAUDE] AUTOSPOT - Build onboarding flow automation
+DESCRIPTION:Create automated onboarding flow for new customers. Include tutorials and setup.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-wed-autospot-rado-1@claude-organizer
+DTSTART:20260205T180000Z
+DTEND:20260205T210000Z
+SUMMARY:[RADO] AUTOSPOT - Recruit third beta customer
+DESCRIPTION:Recruit and onboard third beta customer. Complete initial beta cohort.\n\nProject: AUTOSPOT\nPriority: HIGH\nOwner: Rado
+CATEGORIES:SALES,HIGH-PRIORITY,AUTOSPOT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-wed-radorealtalk-1@claude-organizer
+DTSTART:20260205T190000Z
+DTEND:20260205T230000Z
+SUMMARY:[CLAUDE] RadoRealTalk - Automate TTS conversion
+DESCRIPTION:Build automated TTS conversion pipeline for podcast audio generation.\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Claude
+CATEGORIES:DEVELOPMENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-wed-radorealtalk-rado-1@claude-organizer
+DTSTART:20260205T200000Z
+DTEND:20260205T220000Z
+SUMMARY:[RADO] RadoRealTalk - Choose podcast hosting platform
+DESCRIPTION:Research and choose podcast hosting platform (Anchor\, Buzzsprout\, etc.).\n\nProject: RadoRealTalk\nPriority: HIGH\nOwner: Rado
+CATEGORIES:CONTENT,HIGH-PRIORITY,RADOREALTALK
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:week2-wed-minecraft-1@claude-organizer
+DTSTART:20260205T160000Z
+DTEND:20260205T200000Z
+SUMMARY:[CLAUDE] AI_Minecraft_Players - Implement learning system
+DESCRIPTION:Begin implementing learning system foundation for Phase 8.\n\nProject: AI_Minecraft_Players\nPriority: MEDIUM\nOwner: Claude
+CATEGORIES:DEVELOPMENT,MEDIUM-PRIORITY,MINECRAFT
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+UID:milestone-month1@claude-organizer
+DTSTART:20260223T230000Z
+DTEND:20260224T000000Z
+SUMMARY:🏆 MILESTONE: Month 1 Complete (Q1 2026)
+DESCRIPTION:Month 1 Achievement Checklist:\n✓ AUTOSPOT: 3-5 beta customers active\n✓ RadoRealTalk: 26 articles published\n✓ AI_Minecraft_Players: v1.0 released\n✓ Legacy: 15 projects archived\n✓ personal_site: Blog integrated\n\nNext: Month 2 - Scale to 10 customers\, 50 articles\, community building
+CATEGORIES:MILESTONE
+STATUS:CONFIRMED
+PRIORITY:9
+END:VEVENT
+
+BEGIN:VEVENT
+UID:milestone-month2@claude-organizer
+DTSTART:20260323T230000Z
+DTEND:20260324T000000Z
+SUMMARY:🏆 MILESTONE: Month 2 Complete (Q1 2026)
+DESCRIPTION:Month 2 Achievement Checklist:\n✓ AUTOSPOT: 10 paying customers\, $5K MRR\n✓ RadoRealTalk: 50 articles\, blog launched\, 8 podcast episodes\n✓ forgekeeper: Documentation complete\, shared publicly\n✓ watcher_protocol: v1.0 architecture defined\n\nNext: Month 3 - Optimization\, retention\, community growth
+CATEGORIES:MILESTONE
+STATUS:CONFIRMED
+PRIORITY:9
+END:VEVENT
+
+BEGIN:VEVENT
+UID:milestone-month3@claude-organizer
+DTSTART:20260420T230000Z
+DTEND:20260421T000000Z
+SUMMARY:🎉 MILESTONE: Q1 Goals Complete!
+DESCRIPTION:Q1 2026 Final Achievement Checklist:\n✓ AUTOSPOT: 10 customers\, 80%+ retention\, case studies\n✓ RadoRealTalk: 50 articles\, podcast on Apple/Spotify\, 500+ subscribers\n✓ AI_Minecraft_Players: 1000+ downloads\n✓ forgekeeper: 100+ GitHub stars\, active community\n✓ Portfolio: Reduced from 29 to 8-10 active projects\n\nCongratulations! Q1 goals achieved. Plan Q2 strategy.\n\nNext: Q2 2026 - Scale to 25 customers\, 100 articles\, sustainable growth
+CATEGORIES:MILESTONE
+STATUS:CONFIRMED
+PRIORITY:9
+END:VEVENT
+
+BEGIN:VEVENT
+UID:weekly-review@claude-organizer
+DTSTART:20260202T180000Z
+DTEND:20260202T190000Z
+SUMMARY:📊 Weekly Review & Planning
+DESCRIPTION:Review progress against weekly goals:\n- Check task completion rates\n- Analyze blockers and challenges\n- Adjust priorities for next week\n- Celebrate wins\n- Update strategic plan if needed\n\nBring: Task list\, metrics\, feedback
+RRULE:FREQ=WEEKLY;BYDAY=MO
+CATEGORIES:REVIEW,STRATEGIC
+STATUS:CONFIRMED
+PRIORITY:7
+END:VEVENT
+
+BEGIN:VEVENT
+UID:monthly-review@claude-organizer
+DTSTART:20260228T180000Z
+DTEND:20260228T200000Z
+SUMMARY:📈 Monthly Review & Strategy Session
+DESCRIPTION:Comprehensive monthly review:\n- Review all monthly milestones\n- Analyze metrics and KPIs\n- Update project-overview.md\n- Adjust strategic-plan.md\n- Celebrate achievements\n- Plan next month priorities\n\nBring: All project data\, customer feedback\, analytics
+RRULE:FREQ=MONTHLY;BYMONTHDAY=28
+CATEGORIES:REVIEW,STRATEGIC
+STATUS:CONFIRMED
+PRIORITY:9
+END:VEVENT
+
+END:VCALENDAR

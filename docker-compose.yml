@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # Ollama service with GPU support for local inference
+  ollama:
+    image: ollama/ollama:latest
+    container_name: night-arch-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+      - ./shared:/workspace/shared
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      - OLLAMA_NUM_GPU=1
+      - OLLAMA_GPU_LAYERS=999
+      - OLLAMA_NUM_CTX=65536
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - night-arch-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Redis for task queue (if needed for future agent coordination)
+  redis:
+    image: redis:7-alpine
+    container_name: night-arch-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+      - ./shared:/workspace/shared
+    networks:
+      - night-arch-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # PostgreSQL for pattern storage (optional - can use files for now)
+  postgres:
+    image: postgres:15-alpine
+    container_name: night-arch-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=nightarch
+      - POSTGRES_PASSWORD=nightarch_dev_password
+      - POSTGRES_DB=nightarch
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./shared:/workspace/shared
+    networks:
+      - night-arch-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nightarch"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  ollama-data:
+    driver: local
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
+
+networks:
+  night-arch-network:
+    driver: bridge

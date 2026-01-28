@@ -1,0 +1,10 @@
+{
+    "initialized_at": "2026-01-27T23:50:00-05:00",
+    "last_active": null,
+    "total_tasks_completed": 0,
+    "total_claude_time_minutes": 0,
+    "total_ollama_calls": 0,
+    "total_api_calls": 0,
+    "patterns_captured": 0,
+    "current_session": null
+}

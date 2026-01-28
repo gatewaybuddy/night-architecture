@@ -1,0 +1,18 @@
+{
+  "successful_approaches": [
+    {
+      "task_type": "bug_fix",
+      "approach": "trace_backwards_from_error",
+      "success_rate": 0.85,
+      "iterations_avg": 3
+    }
+  ],
+  "failed_approaches": [
+    {
+      "task_type": "refactor",
+      "approach": "big_bang_rewrite",
+      "failure_reason": "too_many_changes",
+      "lesson": "incremental_refactor_better"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Setup .claude directory",
+      "priority": "P1",
+      "status": "complete",
+      "created": "2026-01-27"
+    }
+  ]
+}

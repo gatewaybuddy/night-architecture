@@ -1,0 +1,10 @@
+{
+  "name": "session-resume",
+  "version": "1.0.0",
+  "enabled": true,
+  "config": {
+    "lookback_commits": 10,
+    "scan_depth": 2,
+    "priority_patterns": ["TODO", "FIXME", "WIP"]
+  }
+}

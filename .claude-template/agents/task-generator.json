@@ -1,0 +1,13 @@
+{
+  "name": "task-generator",
+  "version": "1.0.0",
+  "enabled": true,
+  "config": {
+    "auto_priority": true,
+    "priority_keywords": {
+      "P0": ["security", "crash", "data loss"],
+      "P1": ["bug", "error", "broken"],
+      "P2": ["enhancement", "refactor", "docs"]
+    }
+  }
+}

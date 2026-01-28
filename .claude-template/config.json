@@ -1,0 +1,32 @@
+{
+  "project_name": "MyProject",
+  "project_type": "auto-detect",
+  "agents": {
+    "session_resume": {
+      "enabled": true,
+      "lookback_commits": 10
+    },
+    "task_generator": {
+      "enabled": true,
+      "auto_priority": true
+    },
+    "doc_sync": {
+      "enabled": false,
+      "hook": "post-commit"
+    },
+    "voice_validator": {
+      "enabled": false,
+      "mode": "normal"
+    }
+  },
+  "conventions": {
+    "naming": "auto-detect",
+    "test_framework": "auto-detect",
+    "code_style": "auto-detect"
+  },
+  "paths": {
+    "source": "src/",
+    "tests": "tests/",
+    "docs": "docs/"
+  }
+}
